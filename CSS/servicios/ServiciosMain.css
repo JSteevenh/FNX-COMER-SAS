@@ -1,0 +1,508 @@
+.header-general {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.header-blur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/Imagenes/ImagenHeaderServicios.jpg') no-repeat center center/cover;
+    filter: blur(3px); 
+    z-index: 0;
+}
+
+.header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 62, 128, 0.6);
+    z-index: 1;
+}
+
+.header-content {
+    position: absolute;
+    top: 40%;
+    left: 15%;
+    transform: translateY(-50%);
+    color: white;
+    text-align: left;
+    z-index: 2;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(35px); 
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.header-content h1 {
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-family: 'VTF Justina', sans-serif;
+    opacity: 0; 
+    animation: fadeInUp 1s ease-out forwards; 
+}
+    
+.underline {
+    width: 100px;
+    height: 3px;
+    background-color: #48b2e8;
+    margin-bottom: 20px;
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(650px); 
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.breadcrumb {
+    font-size: 15px;
+    color: #ffffff;
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    font-family: 'Slate', sans-serif;
+    opacity: 0; 
+    animation: fadeInRight 1s ease-out 0.5s forwards;
+}
+
+.breadcrumb i{
+    font-size: 15px; 
+    margin: 0 8px; 
+    color: #48b2e8; 
+}
+
+.breadcrumb a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.breadcrumb a:hover {
+    color: #F8A22F;
+}
+
+.breadcrumb span {
+    margin-left: 5px;
+}
+
+/* ----------------- SERVICIOS DE TRANSPORTES ----------------- */
+
+.servicios-transporte {
+    background-color: #F8F9FA; 
+    padding: 80px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.servicios-header h3 {
+    font-family: 'vtf justina', sans-serif;
+    color: #3db9d3;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.servicios-header h2 {
+    font-family: 'vtf justina', sans-serif;
+    color: #146ab5;
+    font-size: 40px;
+    max-width: 500px;
+    font-weight: bold;
+    margin: -19px auto 0 auto;
+    text-align: center; 
+    line-height: 1.2;
+    margin-bottom: 24px;
+}
+
+.servicios-header .line {
+    width: 100px;
+    height: 4px;
+    background-color: #00A8E8;
+    margin: 15px auto;
+    border-radius: 0px;
+}
+
+.servicios-header p {
+    font-family: 'SlateLight', sans-serif;
+    font-size: 16px;
+    color: #626262;
+    max-width: 540px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+.servicios-container {
+    display: flex;
+    justify-content: center;
+    gap: 45px;
+    margin-top: 70px;
+}
+
+.servicio {
+    background: white;
+    width: 370px;
+    border-radius: 10px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.servicio img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.servicio-content {
+    padding: 30px 40px;
+    text-align: left;
+    margin-top: -40px;
+}
+
+.servicio-content h3 {
+    font-family: 'VTF Justina', sans-serif;
+    font-size: 30px;
+    color: #146ab5;
+    font-weight: bold;
+}
+
+.servicio-content p {
+    font-family: 'SlateLight', sans-serif;
+    font-size: 15px;
+    color: #646464;
+    margin-top: -20px;
+    line-height: 1.6;
+    font-weight: lighter;
+}
+
+.btn-servicio {
+    font-family: 'SlateLight', sans-serif;
+    font-size: 14px;
+    font-weight:500;
+    color: #FF7B2C;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+    transition: transform 0.3s ease;
+}
+
+.btn-servicio span {
+    font-size: 14px;
+    color: #FF7B2C;
+}
+
+.btn-servicio:hover {
+    transform: translateY(-3px); 
+}
+
+.btn-servicio:hover span {
+    color: inherit;
+}
+
+.servicio:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.servicios-header h3,
+.servicios-header h2,
+.servicios-container,
+.servicio {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.servicios-header.show h3,
+.servicios-header.show h2,
+.servicios-container.show {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.show {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* ----------------- HEMOS ENTREGADO ----------------- */
+.hemos-entregado {
+    background-color: #ffffff; 
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.hemos-entregado-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1300px;
+    width: 100%;
+    gap: 40px; 
+}
+
+.contenedor-perro, .contenedor-oficina {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagen-oficina img {
+    max-width: 450px;
+    height: 500px;
+    margin-right: -110px; 
+    object-fit: cover;
+}
+
+.imagen-perro img {
+    max-width: 350px; 
+    height: auto;
+    object-fit: contain;
+    margin-left: -50px;
+    margin-right: 30px;
+}
+
+.imagen-perro {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.imagen-oficina {
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+}
+
+.hemos-entregado-content {
+    flex: 2;
+    text-align: left;
+    max-width: 600px;
+    overflow: hidden;
+}
+
+.hemos-entregado-content h3 {
+    font-family: 'VTF Justina', sans-serif;
+    color: #3db9d3;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.hemos-entregado-content h2 {
+    font-family: 'VTF Justina', sans-serif;
+    font-size: 40px;
+    color: #115895;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.hemos-entregado-content h2 .destacado {
+    color: #F8A22F;
+    font-weight: bold;
+}
+
+.hemos-entregado-content h2 .subrayado {
+    display: inline-block;
+    position: relative;
+}
+
+.hemos-entregado-content h2 .subrayado::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #F8A22F;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    border-radius: 2px;
+}
+
+.linea {
+    width: 80px;
+    height: 4px;
+    background-color: #3db9d3;
+    margin: 15px 0;
+    border-radius: 2px;
+}
+
+.hemos-entregado-content p {
+    font-family: 'SlateLight', sans-serif;
+    font-size: 16px;
+    color: #595959;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.btn-entregado {
+    font-family: 'VTF Justina', sans-serif;
+    display: inline-flex;
+    align-items: center;
+    background: linear-gradient(to right, #FFC44D, #FF7B2C);
+    color: white;
+    height: 15px;
+    padding: 12px 22px;
+    font-size: 15px;
+    border-radius: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.3s ease-out, background 0.3s ease-out, box-shadow 0.3s ease-out;
+    gap: 10px;
+    will-change: transform, opacity;
+}
+
+.btn-entregado span {
+    font-size: 18px;
+}
+
+.hemos-entregado-content h3,
+.hemos-entregado-content h2{
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.btn-entregado {
+    opacity: 0;
+    transform: translateY(-50px); 
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.btn-entregado.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.btn-entregado.show:hover {
+    background: linear-gradient(to right, #FF7B2C, #FFC44D);
+    transform: translateY(-5px); 
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+.imagen-perro {
+    opacity: 0;
+    transform: translateX(-50px); 
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ----------------- NUESTRO OBJETIVO ----------------- */
+
+.nuestro-objetivo {
+    background-color: #f8f9fa;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.objetivo-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
+
+.objetivo-subtitulo {
+    color: #3db9d3;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-family: 'VTF Justina', sans-serif;	
+}
+
+.objetivo-titulo {
+    color: #2054a5;
+    font-size: 40px;
+    max-width: 70%;
+    font-weight: bold;
+    margin: 0 auto 20px auto;
+    text-align: center;
+    font-family: 'VTF Justina', sans-serif;
+    line-height: 1.2;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.linea {
+    width: 100px;
+    height: 4px;
+    background-color: #3db9d3;
+    margin: 10px auto;
+    margin-bottom: 70px;
+}
+
+.objetivo-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 70px;
+    margin-top: 40px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.objetivo-imagen {
+    flex: 1;
+    max-width: 500px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.objetivo-imagen img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.objetivo-texto {
+    flex: 1;
+    max-width: 500px;
+    text-align: left;
+    font-size: 16px;
+    color: #5b5b5b;
+    font-family: 'SlateLight', sans-serif;
+    line-height: 1.6;
+}
+
+
+.show {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
